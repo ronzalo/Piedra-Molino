@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @person.name %>
+</p>
+ <p>
+  <b>Avatar:</b>
+  <%= image_tag @person.avatar.url %>
+  <%= image_tag @person.avatar.url(:thumb) %>
+</p>
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
