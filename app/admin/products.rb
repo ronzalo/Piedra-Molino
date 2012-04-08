@@ -12,7 +12,7 @@ ActiveAdmin.register Product do
         f.input :price
         f.input :description, :input_html => {:rows => 5, :cols => 10}
         f.input :category
-        f.input :image, :as => :file, :hint => "Ingresa una imagen del producto" 
+        f.input :image, :as => :file, :hint => f.object.image.nil? ? f.template.content_tag(:span, "No Image Yet"): f.template.image_tag(f.object.image.url(:thumb))
      end
         f.buttons
     end
@@ -24,7 +24,7 @@ ActiveAdmin.register Product do
         row :category_id
         row :description 
         row :image do
-          image_tag(product.image.url)
+          image_tag(product.image.url(:medium))
         end
     end        
   end
