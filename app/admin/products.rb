@@ -5,7 +5,6 @@ ActiveAdmin.register Product do
   # menu :priority => 1
  config.comments = false 
   
-    
   form :html => { :enctype => "multipart/form-data" } do |f|
       f.inputs "Product", :multipart => true do
         f.input :name
