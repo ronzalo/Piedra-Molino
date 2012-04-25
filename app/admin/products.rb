@@ -29,17 +29,17 @@ ActiveAdmin.register Product do
   end
 
   index do
-    column :name do |product|
+    column "Nombre",:name do |product|
       link_to product.name, [:admin, product]
     end
-    column :category
+    column "Categoria", :category, :sortable => false
     column "Creado", :created_at
-    column :price, :sortable => :price do |product|
+    column "Precio", :price, :sortable => :price do |product|
       div :class => "price" do
         number_to_currency product.price, :precision => 0, :delimiter => ".", :separator => ","
       end
     end
-    column :image do |product|
+    column "Imagen", :image do |product|
           image_tag(product.image.url(:thumb))
     end      
     default_actions

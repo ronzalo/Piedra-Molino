@@ -21,7 +21,7 @@ ActiveAdmin::Dashboards.build do
   
   section "Categoria con mas Productos" do
   h1 do
-    Product.where(:category_id => 1).count()
+    Product.count(:group => :category_id as :category).to_s
     end
   end
   # Define your dashboard sections here. Each block will be
