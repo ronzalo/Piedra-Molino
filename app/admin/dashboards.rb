@@ -2,10 +2,10 @@ ActiveAdmin::Dashboards.build do
 
   section "Ultimos Productos" do
     table_for Product.order("created_at desc").limit(5) do
-      column :name do |product|
+      column "Nombre", :name do |product|
         link_to product.name, [:admin, product]
       end
-      column :created_at
+      column "Creado el", :created_at
     end
     strong { link_to "Ver todos los Productos", admin_products_path }
   end
@@ -21,7 +21,7 @@ ActiveAdmin::Dashboards.build do
   
   section "Categoria con mas Productos" do
   h1 do
-    Product.count(:group => :category_id).to_s
+    #Product.max(:where => :category_id).to_s
     end
   end
   # Define your dashboard sections here. Each block will be

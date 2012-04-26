@@ -11,7 +11,7 @@ end
 group :production do
   gem 'pg'
 end
-
+gem 'valid_email'
 gem 'activeadmin'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
