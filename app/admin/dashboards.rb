@@ -1,5 +1,5 @@
 ActiveAdmin::Dashboards.build do
-
+  
   section "Ultimos Productos" do
     table_for Product.order("created_at desc").limit(5) do
       column "Nombre", :name do |product|

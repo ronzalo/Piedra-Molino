@@ -3,6 +3,9 @@ ActiveAdmin.register Product do
   # menu :parent =>  "Holi"
   # Prioridad en el orden del menu
   # menu :priority => 1
+  # Cambiar nombre de menu
+  # menu :label => "caca"
+ menu :label => "Productos" 
  config.comments = false 
   
   form :html => { :enctype => "multipart/form-data" } do |f|

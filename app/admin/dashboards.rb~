@@ -1,11 +1,11 @@
 ActiveAdmin::Dashboards.build do
-
+  menu :label => "Panel de Control"
   section "Ultimos Productos" do
     table_for Product.order("created_at desc").limit(5) do
       column "Nombre", :name do |product|
         link_to product.name, [:admin, product]
       end
-      column :created_at
+      column "Creado el", :created_at
     end
     strong { link_to "Ver todos los Productos", admin_products_path }
   end

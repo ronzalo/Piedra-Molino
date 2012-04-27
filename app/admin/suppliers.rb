@@ -1,5 +1,6 @@
 ActiveAdmin.register Supplier do
 config.comments = false 
+menu :label => "Proveedor"
 
 form do |f|
   f.inputs "Proveedor" do
