@@ -10,7 +10,7 @@ form do |f|
   f.input :web_page, :label => "Pagina Web"
   f.input :bank, :label => "Banco"
   f.input :account, :label => "Cuenta"
-  f.input :payment_conditions, :label => "Metodo de Pago"
+  f.input :payment, :label => "Metodo de Pago"
   f.input :observation, :input_html => {:rows => 5, :cols => 10}, :label => "Observaciones"
   f.buttons
     end

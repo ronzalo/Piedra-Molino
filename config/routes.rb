@@ -1,6 +1,9 @@
 Project::Application.routes.draw do
-  resources :people
-
+  namespace :admin do
+  	resources :products do
+  		get :autocomplete_product_name, :on => :collection
+  	end
+	end
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

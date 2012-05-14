@@ -8,9 +8,7 @@ group :development, :test do
   gem 'mysql2'
 end
 
-group :production do
-  gem 'pg'
-end
+gem 'rails-i18n'
 gem 'valid_email'
 gem 'activeadmin'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
@@ -27,7 +25,7 @@ group :assets do
 end
 gem 'sass-rails',   '~> 3.2.3'
 gem 'jquery-rails'
-
+gem 'rails3-jquery-autocomplete'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
