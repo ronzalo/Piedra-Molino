@@ -13,16 +13,14 @@ ActiveAdmin::Dashboards.build do
   section "Ultimas Categorias" do
      ul do
          Category.all.collect do |category|
-           li link_to(category.name, admin_category_path(category))
-           
+           li link_to(category.name, admin_category_path(category))           
          end
      end        
   end  
   
-  section "Categoria con mas Productos" do
-  h1 do
-    #Product.max(:where => :category_id).to_s
-    end
+  section "Precios" do
+  	product = Product.new
+    render 'precios', :product => product
   end
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
