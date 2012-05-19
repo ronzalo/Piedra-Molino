@@ -1,7 +1,6 @@
 ActiveAdmin.register Payment do
    config.comments = false
-   menu :parent => "Administracion"
-#   menu :priority => 7	 
+   menu :parent => "Administracion", :priority => 7
 	 	 
    filter :name, :label => "Nombre"
    

@@ -1,6 +1,6 @@
 ActiveAdmin.setup do |config|
 	config.register_javascript 'autocomplete-rails.js'
-
+	config.register_javascript 'highcharts.js'
 	config.before_filter do
     I18n.locale = 'es'
   end
