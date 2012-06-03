@@ -13,7 +13,8 @@ end
 
 #gem "ckeditor", "3.7.0.rc3"
 gem 'sass-rails',   '~> 3.2.3'
-gem 'tlsmail'
+#gem 'tlsmail'
+#gem 'smtp_tls', '~> 1.0.3'
 gem 'rails-i18n'
 gem 'valid_email'
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
