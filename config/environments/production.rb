@@ -64,4 +64,22 @@ Project::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  require 'tlsmail'       
+ Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)   
+ ActionMailer::Base.delivery_method = :smtp   
+ ActionMailer::Base.perform_deliveries = true   
+ ActionMailer::Base.raise_delivery_errors = true   
+ ActionMailer::Base.smtp_settings = {   
+ :enable_starttls_auto => true,     
+ :address            => 'smtp.gmail.com',   
+ :port               => 587,   
+ :tls                  => true,   
+ :domain             => 'gmail.com',    
+ :authentication     => :plain,   
+ :user_name          => 'petruxx@gmail.com',   
+ :password           => 'upstheirons' # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])   
+ }   
+
+ config.action_mailer.default_url_options = { :host => 'gmail.com' }
 end

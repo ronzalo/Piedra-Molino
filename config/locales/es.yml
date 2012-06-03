@@ -2,44 +2,34 @@ es:
   activerecord:
     models:
       product:
-        one: producto
-        other: productos
+        one: Producto
+        other: Productos
+      client:
+        one: Cliente
+        other: Clientes  
       category:
-        one: categoria
-        other: categorias
+        one: Categoria
+        other: Categorias
+      family:
+        one: Familia
+        other: Familias  
       supplier:
-        one: proveedor
-        other: proveedores
-      user:
-        one: usuario
-        other: usuarios
-      payment:
-        one: "tipo de pago"
-        other: pagos 
+        one: Proveedor
+        other: Proveedores
+      admin_user:
+        one: Usuario
+        other: Usuarios
     attributes:
       category:
-        name: nombre
-        created_at: creado
-        updated_at: modificado
-      product:
-        name: nombre
-        category_id: categoria
-        price: precio
-        description: descripcion
-        image: imagen
-        created_at: creado
-        updated_ad: modificado
-      supplier:
-        payment: "Tipo de Pago"
-        name: nombre
-        observation: observacion
-        code: codigo
-        web_page: "Pagina web"
-        bank: banco
-        account: cuenta
-        created_at: creado
-        updated_at: modificado
-      payment:
-        name: nombre
-        created_at: creado
-        updated_at: modificado
+        name: Nombre
+        created_at: Creado
+        updated_at: Modificado
+      family:
+        name: Nombre
+        category: Categoria
+      admin_user:
+        email: Email
+        last_sign_in_at: "Ultimo ingreso"
+        sign_in_count: "Numero de ingresos"
+        password: Contraseña
+        password_confirmation: "Confirme contraseña"  

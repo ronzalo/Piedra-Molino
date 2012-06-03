@@ -15,6 +15,7 @@ es:
       unauthenticated: 'Necesita acceder a su cuenta o registrarse antes de continuar.'
       unconfirmed: 'Necesita confirmar su cuenta antes de continuar.'
       locked: 'Su cuenta está bloqueada.'
+      login: 'Ingreso'
       invalid: 'Contraseña o Email incorrecto.'
       invalid_token: 'Token de autenticación incorrecto.'
       timeout: 'Su sesión ha expirado, por favor acceda de nuevo para continuar.'
@@ -31,7 +32,7 @@ es:
       send_paranoid_instructions: 'Si su email ya existe en nuestra base de datos, recibirá un email con instrucciones para confirmar su cuenta en pocos minutos.'
       confirmed: 'Su cuenta ha sido confirmada. Ya ha accedido a su cuenta.'
     registrations:
-      signed_up: '¡Bienvenido! Le ha registrado correctamente.'
+      signed_up: '¡Bienvenido! Se ha registrado correctamente.'
       inactive_signed_up: 'Le ha registrado correctamente. Sin embargo, no está conectado todavía porque su cuenta está %{reason}.'
       updated: 'Ha actualizado su cuenta correctamente.'
       destroyed: '¡Hasta luego! Su cuenta ha sido cancelada. Esperamos verle pronto.'

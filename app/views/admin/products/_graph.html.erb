@@ -7,22 +7,19 @@ $(document).ready(function() {
             type: 'bar'
          },
          title: {
-            text: 'Fruit Consumption'
+            text: '<%= product.name %>'
          },
          xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
+            categories: ['Minimo', 'Maximo', 'real']
          },
          yAxis: {
             title: {
-               text: 'Fruit eaten'
+               text: 'Stock al año'
             }
          },
          series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-         }, {
-            name: 'John',
-            data: [5, 7, 3]
+            name: 'Letsgo',
+            data: [<%= product.minimum_stock %>, <%= product.maximum_stock %>, <%= product.real_stock %>]
          }]
       });
    });

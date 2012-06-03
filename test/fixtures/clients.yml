@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rut: 
+  razon_social: 
+  giro: 
+  telefono: 
+  email: 
+  representante: 
+  contacto: 
+  modo_de_pago: 
+  credito_asignado: 
+  saldo: 
+  sucursal: MyString
+
+two:
+  rut: 
+  razon_social: 
+  giro: 
+  telefono: 
+  email: 
+  representante: 
+  contacto: 
+  modo_de_pago: 
+  credito_asignado: 
+  saldo: 
+  sucursal: MyString

@@ -1,5 +1,14 @@
 es:
   active_admin:
+    devise:
+      login:
+        title: 'Ingreso'
+        remember_me: 'Recuerdame'
+        login: 'Ingresar'
+      links:  
+        forgot_your_password: '¿Olvido su contraseña?'
+      buttons:
+        login: 'Ingresar'
     dashboard: Inicio
     dashboard_welcome:
       welcome: "Bienvenido a Active Admin. Esta es la página de inicio predeterminada."
@@ -44,7 +53,7 @@ es:
         other: "registros"
     any: "Cualquiera"
     batch_actions:
-      button_label: "Batch Actions"
+      button_label: "Acciones"
       delete_confirmation: "¿Está seguro que quiere eliminar estos %{plural_model}? No podrás deshacer esta opción."
       succesfully_destroyed:
         one: "Se ha destruido 1 %{model} exitosamente"

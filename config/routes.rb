@@ -1,9 +1,4 @@
 Project::Application.routes.draw do
-  namespace :admin do
-  	resources :products do
-  		get :autocomplete_product_name, :on => :collection
-  	end
-	end
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -57,7 +52,7 @@ Project::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'admin/dashboard#index'
+  root :to => 'admin/products#index'
 
   # See how all your routes lay out with "rake routes"
 

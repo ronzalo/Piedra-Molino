@@ -12,11 +12,13 @@ group :development, :test do
   gem 'mysql2'
 end
 
+#gem "ckeditor", "3.7.0.rc3"
+gem 'tlsmail'
 gem 'rails-i18n'
 gem 'valid_email'
-gem 'activeadmin'
+gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
+gem 'active_admin_editor'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

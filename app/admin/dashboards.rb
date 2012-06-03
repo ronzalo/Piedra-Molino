@@ -2,8 +2,8 @@ ActiveAdmin::Dashboards.build do
   
   section "Ultimos Productos" do
     table_for Product.order("created_at desc").limit(5) do
-      column "Nombre", :name do |product|
-        link_to product.name, [:admin, product]
+      column "Nombre", :nombre do |product|
+        link_to product.nombre, [:admin, product]
       end
       column "Creado el", :created_at
     end
@@ -16,12 +16,20 @@ ActiveAdmin::Dashboards.build do
            li link_to(category.name, admin_category_path(category))           
          end
      end        
-  end  
-  
-  section "Precios" do
-  	product = Product.new
-    render 'precios', :product => product
   end
+  
+  
+  section "Productos con bajo stock" do
+    table_for Product.where('real_stock < minimum_stock') do |t|
+      column "Nombre", :nombre do |product|
+        link_to product.nombre, [:admin, product], :class => "critico"
+      end
+      column "Comprar Stock", :real_stock do |product|
+        b (product.minimum_stock - product.real_stock)
+      end
+    end
+  end
+  
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.

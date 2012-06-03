@@ -1,9 +1,5 @@
-require 'valid_email'
-class Supplier < ActiveRecord::Base
-  attr_accessible :email, :rut, :nombre, :razon_social, :giro, :telefono, :contacto, :representante
-  
-  validates_presence_of :nombre, :razon_social
-  
+class Client < ActiveRecord::Base
+  attr_accessible :contacto, :credito_asignado, :email, :giro, :modo_de_pago, :razon_social, :representante, :rut, :saldo, :sucursal, :telefono
   validates :telefono, :numericality => true, 
                        :length => {:minimum => 7, :maximum => 11}
                        
@@ -14,9 +10,7 @@ class Supplier < ActiveRecord::Base
                     :length => {:minimum => 3, :maximum => 254},
                     :uniqueness => true,
                     :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
-  
-  
-  
+  validates :razon_social, :presence => true
+  validates :giro, :presence => true
+  validates :saldo, :presence => true, :numericality => true
 end
-
-

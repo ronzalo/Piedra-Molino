@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120515060551) do
+ActiveRecord::Schema.define(:version => 20120527083404) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,37 +52,61 @@ ActiveRecord::Schema.define(:version => 20120515060551) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "payments", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "clients", :force => true do |t|
+    t.string   "rut"
+    t.string   "razon_social"
+    t.string   "giro"
+    t.string   "telefono"
+    t.string   "email"
+    t.string   "representante"
+    t.string   "contacto"
+    t.string   "modo_de_pago"
+    t.integer  "credito_asignado"
+    t.integer  "saldo"
+    t.string   "sucursal"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "families", :force => true do |t|
+    t.string   "nombre"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "products", :force => true do |t|
-    t.string   "name"
-    t.integer  "price"
-    t.text     "description"
-    t.integer  "category_id"
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.integer  "precio"
+    t.integer  "costo_venta"
+    t.integer  "family_id"
+    t.string   "codigo"
+    t.string   "codigo_barra"
+    t.string   "ubicacion"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "real_stock"
+    t.integer  "maximum_stock"
+    t.integer  "minimum_stock"
   end
 
   create_table "suppliers", :force => true do |t|
-    t.string   "legal_id"
-    t.string   "name"
-    t.text     "observation"
-    t.string   "code"
-    t.string   "web_page"
-    t.string   "bank"
-    t.string   "account"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.string   "rut"
+    t.string   "nombre"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "email"
-    t.integer  "payment_id"
+    t.string   "razon_social"
+    t.string   "giro"
+    t.string   "direccion_id"
+    t.string   "telefono"
+    t.string   "representante"
+    t.string   "contacto"
   end
 
 end
