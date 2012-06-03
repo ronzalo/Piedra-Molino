@@ -1,7 +1,11 @@
 ActiveAdmin.register AdminUser do
+#  menu :if => proc{ can?(:manage, AdminUser) }     
+#  controller.authorize_resource 
+
   index do
     selectable_column
     column :email
+    column :role
     column :last_sign_in_at
     column :sign_in_count
     default_actions
@@ -10,6 +14,7 @@ ActiveAdmin.register AdminUser do
   form do |f|
     f.inputs "Detalles Admin" do
       f.input :email
+      f.input :role, :collection => AdminUser::ROLES
       f.input :password
       f.input :password_confirmation
     end

@@ -19,6 +19,8 @@ gem 'valid_email'
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'active_admin_editor'
+gem 'cancan'
+gem 'activeadmin-cancan'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

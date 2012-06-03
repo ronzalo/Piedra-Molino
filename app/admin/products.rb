@@ -8,6 +8,10 @@ ActiveAdmin.register Product do
   # :download_links => false para ocultar links en index  
   # menu :label => "Productos" 
   
+ controller do
+    load_and_authorize_resource
+  end 
+  
  config.comments = false
  
 	#Filtros
