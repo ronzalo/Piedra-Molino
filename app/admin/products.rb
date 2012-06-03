@@ -39,7 +39,7 @@ ActiveAdmin.register Product do
      f.input :maximum_stock, :label => "Stock Maximo", :input_html => {:class => "input_mediano"}
      f.input :minimum_stock , :label => "Stock Minimo", :input_html => {:class => "input_mediano"}
      f.input :family, :label => "Familia"
-     f.input :descripcion, :as => :html_editor, :input_html => {:rows => 10, :cols => 5} 
+     f.input :descripcion, :input_html => {:rows => 10, :cols => 5} 
      f.input :image, :as => :file, :hint =>  f.object.image? ? f.template.image_tag(f.object.image.url(:thumb)) : f.template.content_tag(:span, "Imagen Opcional")
      end
         f.buttons
@@ -71,9 +71,7 @@ ActiveAdmin.register Product do
         row :real_stock do
           b product.real_stock
         end
-        row :descripcion do
-          simple_format product.descripcion
-        end
+        row :descripcion
         row :image do
         	image_tag(product.image.url(:medium))
         end

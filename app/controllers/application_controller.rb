@@ -9,5 +9,8 @@ class ApplicationController < ActionController::Base
 		@current_ability ||= Ability.new(current_admin_user)
 	end
 	
-	
+	def current_user 
+    @current_user ||= AdminUser.new(current_user)
+  end
+  
 end

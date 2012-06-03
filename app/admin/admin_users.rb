@@ -1,6 +1,6 @@
 ActiveAdmin.register AdminUser do
 #  menu :if => proc{ can?(:manage, AdminUser) }     
-#  controller.authorize_resource 
+#  controller.authorize_resource  
 
   index do
     selectable_column
@@ -24,6 +24,7 @@ ActiveAdmin.register AdminUser do
   show do |user|
     attributes_table do
       row :email
+      row :role
       row :last_sign_in_at
       row :sign_in_count
     end

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 73b051f895208517bae979f724de66d61fc1ed95
+  revision: b0dd8fdcfbd68984a8c2ec7f2279a121eeb66c3d
   specs:
     activeadmin (0.4.4)
       bourbon (>= 1.0.0)
@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: a19f2a4df3d31427cb8404e90d79609fbe45f001
+  revision: 24d143978e0df6f8424e8a333605a89a87e33e23
   specs:
     paperclip (3.0.4)
       activemodel (>= 3.0.0)
@@ -86,7 +86,7 @@ GEM
       railties (~> 3.1)
       warden (~> 1.1.1)
     erubis (2.7.0)
-    execjs (1.3.2)
+    execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
     formtastic (2.1.1)
@@ -116,8 +116,8 @@ GEM
       activerecord (~> 3.1)
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
-    mime-types (1.17.2)
-    multi_json (1.3.5)
+    mime-types (1.18)
+    multi_json (1.3.6)
     mysql2 (0.3.11)
     orm_adapter (0.0.7)
     pg (0.13.2)
@@ -141,8 +141,6 @@ GEM
       railties (= 3.2.3)
     rails-i18n (0.6.4)
       i18n (~> 0.5)
-    rails3-jquery-autocomplete (1.0.7)
-      rails (~> 3.0)
     railties (3.2.3)
       actionpack (= 3.2.3)
       activesupport (= 3.2.3)
@@ -156,7 +154,7 @@ GEM
     responders (0.9.1)
       railties (~> 3.1)
     rmagick (2.13.1)
-    sass (3.1.18)
+    sass (3.1.19)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -198,7 +196,6 @@ DEPENDENCIES
   pg
   rails (= 3.2.3)
   rails-i18n
-  rails3-jquery-autocomplete
   sass-rails (~> 3.2.3)
   therubyracer
   tlsmail
