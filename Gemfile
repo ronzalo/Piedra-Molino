@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
-
+gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :production do
@@ -13,7 +12,8 @@ group :development, :test do
 end
 
 #gem "ckeditor", "3.7.0.rc3"
-#gem 'tlsmail'
+gem 'sass-rails',   '~> 3.2.3'
+gem 'tlsmail'
 gem 'rails-i18n'
 gem 'valid_email'
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
@@ -30,7 +30,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-gem 'sass-rails',   '~> 3.2.3'
 gem 'jquery-rails'
 #gem 'rails3-jquery-autocomplete'
 # To use ActiveModel has_secure_password
