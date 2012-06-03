@@ -13,7 +13,7 @@ group :development, :test do
 end
 
 #gem "ckeditor", "3.7.0.rc3"
-gem 'tlsmail'
+#gem 'tlsmail'
 gem 'rails-i18n'
 gem 'valid_email'
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
