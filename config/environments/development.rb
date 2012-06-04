@@ -37,22 +37,7 @@ Project::Application.configure do
   
   Paperclip.options[:command_path] = "/usr/bin"
   
-  require 'tlsmail'       
- Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)   
- ActionMailer::Base.delivery_method = :sendmail   
- ActionMailer::Base.perform_deliveries = true   
- ActionMailer::Base.raise_delivery_errors = true   
- ActionMailer::Base.smtp_settings = {   
- :enable_starttls_auto => true,     
- :address            => "smtp.gmail.com",   
- :port               => 587,   
- :tls                => true,   
- :domain             => "gmail.com",    
- :authentication     => :plain,   
- :user_name          => "gmoreno@acid.cl",   
- :password           => "upstheirons" # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])   
- }   
-
+  
  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
 
 end
