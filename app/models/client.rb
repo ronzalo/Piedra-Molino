@@ -1,5 +1,5 @@
 class Client < ActiveRecord::Base
-  attr_accessible :contacto, :credito_asignado, :email, :giro, :modo_de_pago, :razon_social, :representante, :rut, :saldo, :sucursal, :telefono
+  attr_accessible :contacto, :display_name, :credito_asignado, :email, :giro, :modo_de_pago, :razon_social, :representante, :rut, :saldo, :sucursal, :telefono
   validates :telefono, :numericality => true, 
                        :length => {:minimum => 7, :maximum => 11}
                        
@@ -13,4 +13,9 @@ class Client < ActiveRecord::Base
   validates :razon_social, :presence => true
   validates :giro, :presence => true
   validates :saldo, :presence => true, :numericality => true
+  before_save :display_name
+  
+  def display_name
+    self.display_name = self.razon_social
+  end
 end

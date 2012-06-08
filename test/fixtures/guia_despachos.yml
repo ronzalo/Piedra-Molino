@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  folio: 1
+  fecha_emision: 2012-06-03
+  client_id: 1
+  monto_escrito: MyString
+  tipo_documento: MyString
+  total_venta: 1
+
+two:
+  folio: 1
+  fecha_emision: 2012-06-03
+  client_id: 1
+  monto_escrito: MyString
+  tipo_documento: MyString
+  total_venta: 1

@@ -14,7 +14,6 @@ Project::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -28,7 +27,7 @@ Project::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
-
+#  config.active_support.deprecation = :silence
   # Do not compress assets
   config.assets.compress = false
 
@@ -38,6 +37,19 @@ Project::Application.configure do
   Paperclip.options[:command_path] = "/usr/bin"
   
   
- config.action_mailer.default_url_options = {:host => 'localhost:3000'}
+  config.action_mailer.default_url_options = {:host => '0.0.0.0:3000'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+
+ActionMailer::Base.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :authentication => :plain,
+  :domain => 'gmail.com',
+  :user_name => 'petruxx',
+  :password => 'upstheirons',
+}
 
 end

@@ -9,7 +9,7 @@ class Ability
       when "venta"
         can :manage, [Client, Supplier, Product, Family, Category]  
       when "bodega"
-        can :manage, [Product, Category, Family]  
+        can :read, [Product, Category, Family]  
       end
   end 
 end

@@ -20,9 +20,13 @@ ActiveAdmin.register Category do
   f.inputs "Categoria" do
     f.input :name
   end
-  f.inputs "Familias" do
-    f.has_many :families do |fa|
-      fa.input :name
+  f.inputs "Productos" do
+    f.has_many :products do |p|
+      p.input :nombre
+      p.input :precio
+      p.input :real_stock
+      p.input :minimum_stock
+      p.input :maximum_stock
     end
   end
   

@@ -1,35 +1,41 @@
 es:
   activerecord:
     models:
+      payment:
+        one: Pago
+        other: Pagos
       product:
         one: Producto
         other: Productos
       client:
         one: Cliente
         other: Clientes  
+      configuration:
+        one: Configuración
+        other: Configuraciones  
       category:
         one: Categoria
         other: Categorias
-      family:
-        one: Familia
-        other: Familias  
       supplier:
         one: Proveedor
         other: Proveedores
       admin_user:
         one: Usuario
         other: Usuarios
+      invoice:
+        one: Factura
+        other: Facturas  
     attributes:
       category:
         name: Nombre
         created_at: Creado
         updated_at: Modificado
-      family:
-        name: Nombre
-        category: Categoria
       admin_user:
         email: Email
         last_sign_in_at: "Ultimo ingreso"
         sign_in_count: "Numero de ingresos"
         password: Contraseña
-        password_confirmation: "Confirme contraseña"  
+        password_confirmation: "Confirme contraseña" 
+        role: Rol
+        created_at: Creado
+        updated_at: Modificado 

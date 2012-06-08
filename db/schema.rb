@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120603053218) do
+ActiveRecord::Schema.define(:version => 20120608171056) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -67,13 +67,51 @@ ActiveRecord::Schema.define(:version => 20120603053218) do
     t.string   "sucursal"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "display_name"
   end
 
-  create_table "families", :force => true do |t|
-    t.string   "name"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "configurations", :force => true do |t|
+    t.string   "nombre"
+    t.string   "valor"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "guia_despachos", :force => true do |t|
+    t.integer  "folio"
+    t.date     "fecha_emision"
+    t.integer  "client_id"
+    t.string   "monto_escrito"
+    t.string   "tipo_documento"
+    t.integer  "total_venta"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "invoices", :force => true do |t|
+    t.string   "folio"
+    t.date     "fecha_emision"
+    t.integer  "client_id"
+    t.string   "monto_escrito"
+    t.string   "tipo_documento"
+    t.integer  "total_venta"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "payments", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "product_guia", :force => true do |t|
+    t.integer  "guia_despacho_id"
+    t.integer  "product_id"
+    t.integer  "cantidad"
+    t.integer  "sub_total"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "products", :force => true do |t|
@@ -81,7 +119,6 @@ ActiveRecord::Schema.define(:version => 20120603053218) do
     t.text     "descripcion"
     t.integer  "precio"
     t.integer  "costo_venta"
-    t.integer  "family_id"
     t.string   "codigo"
     t.string   "codigo_barra"
     t.string   "ubicacion"
@@ -94,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20120603053218) do
     t.integer  "real_stock"
     t.integer  "maximum_stock"
     t.integer  "minimum_stock"
+    t.integer  "category_id"
   end
 
   create_table "suppliers", :force => true do |t|

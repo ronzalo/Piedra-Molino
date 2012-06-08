@@ -1,8 +1,7 @@
 class Category < ActiveRecord::Base
-   has_many :families
-   has_many :products, :through => :families
-   attr_accessible :name, :families_attributes
+   has_many :products
+   attr_accessible :name, :products_attributes
    
    validates :name, :presence => true, :uniqueness => true
-   accepts_nested_attributes_for :families
+   accepts_nested_attributes_for :products
 end

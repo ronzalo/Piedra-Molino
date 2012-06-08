@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nombre: MyString
+  guia_despacho_id: 1
+  product_id: 1
 
 two:
-  nombre: MyString
+  guia_despacho_id: 1
+  product_id: 1

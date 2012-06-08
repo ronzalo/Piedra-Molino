@@ -16,6 +16,7 @@ ActiveAdmin.register Product do
  
 	#Filtros
  filter :nombre
+ filter :category
  filter :precio
  filter :real_stock
  
@@ -35,10 +36,9 @@ ActiveAdmin.register Product do
      f.input :nombre, :input_html => {:class => "input_mediano"}
      f.input :precio, :input_html => {:class => "input_mediano"}
      f.input :costo_venta, :input_html => {:class => "input_mediano"}
-     f.input :real_stock, :label => "Stock", :input_html => {:class => "input_mediano"}
      f.input :maximum_stock, :label => "Stock Maximo", :input_html => {:class => "input_mediano"}
      f.input :minimum_stock , :label => "Stock Minimo", :input_html => {:class => "input_mediano"}
-     f.input :family, :label => "Familia"
+     f.input :category, :label => "Categoria"
      f.input :descripcion, :input_html => {:rows => 10, :cols => 5} 
      f.input :image, :as => :file, :hint =>  f.object.image? ? f.template.image_tag(f.object.image.url(:thumb)) : f.template.content_tag(:span, "Imagen Opcional")
      end
