@@ -1,7 +1,16 @@
 class Category < ActiveRecord::Base
-   has_many :products
-   attr_accessible :name, :products_attributes
+
+  set_table_name 'categorias'   
+    
+  has_many :products, :foreign_key => 'categoria_id'
+  attr_accessible :nombre, :products_attributes
    
-   validates :name, :presence => true, :uniqueness => true
-   accepts_nested_attributes_for :products
+  validates :nombre, :presence => true, :uniqueness => true
+  accepts_nested_attributes_for :products
+  
+  def to_s
+    self.nombre
+  end
+  
+  
 end

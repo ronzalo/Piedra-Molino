@@ -1,13 +1,11 @@
 class AdminUser < ActiveRecord::Base
-
+  
+  set_table_name 'usuarios'
   ROLES = %w[admin bodega venta]
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :role, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+  attr_accessible :email, :rol, :password, :password_confirmation, :remember_me
   
 end

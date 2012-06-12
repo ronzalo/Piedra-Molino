@@ -2,8 +2,8 @@ ActiveAdmin::Dashboards.build do
   
   section "Ultimos Productos" do
     table_for Product.order("created_at desc").limit(5) do
-      column "Nombre", :nombre do |product|
-        link_to product.nombre, [:admin, product]
+      column "Nombre", :descripcion do |product|
+        link_to product.descripcion, [:admin, product]
       end
       column "Creado el", :created_at
     end
@@ -13,19 +13,19 @@ ActiveAdmin::Dashboards.build do
   section "Ultimas Categorias" do
      ul do
          Category.all.collect do |category|
-           li link_to(category.name, admin_category_path(category))           
+           li link_to(category.nombre, admin_category_path(category))           
          end
      end        
   end
   
   
   section "Productos con bajo stock" do
-    table_for Product.where('real_stock < minimum_stock') do |t|
-      column "Nombre", :nombre do |product|
-        link_to product.nombre, [:admin, product], :class => "critico"
+    table_for Product.where('stock_real < stock_real') do |t|
+      column "Nombre", :descripcion do |product|
+        link_to product.descripcion, [:admin, product], :class => "critico"
       end
-      column "Comprar Stock", :real_stock do |product|
-        b (product.minimum_stock - product.real_stock)
+      column "Comprar Stock", :stock_real do |product|
+        b (product.stock_minimo - product.stock_real)
       end
     end
   end

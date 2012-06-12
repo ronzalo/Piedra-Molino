@@ -2,13 +2,10 @@ class Invoice < ActiveRecord::Base
   TIPO = %w[Venta Compra]
   attr_accessible :folio, :fecha_emision, :monto_escrito, :client_id, :tipo_documento, :total_venta
   belongs_to :client
-  before_create :set_folio
+  before_create :folio
   
-  def set_folio
-    invoice = Invoice.last
-    current_folio = invoice.nil? ? 0 : invoice.id
-    folio = current_folio + 1
-    invoice.save
+  def folio
+    self.folio = self.id
   end
   
   def fecha_emision

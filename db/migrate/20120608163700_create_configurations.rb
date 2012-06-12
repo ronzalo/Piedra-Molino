@@ -1,8 +1,8 @@
 class CreateConfigurations < ActiveRecord::Migration
   def change
-    create_table :configurations do |t|
-      t.string :nombre
-      t.string :valor
+    create_table :configuraciones do |t|
+      t.string :nombre, :null => false
+      t.string :valor, :null => false
 
       t.timestamps
     end

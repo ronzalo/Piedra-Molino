@@ -1,7 +1,7 @@
 class CreatePayments < ActiveRecord::Migration
   def change
-    create_table :payments do |t|
-      t.string :nombre
+    create_table :pagos do |t|
+      t.string :nombre, :null => false
 
       t.timestamps
     end

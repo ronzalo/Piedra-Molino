@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  folio: 
+  fecha_emision: 2012-06-12 01:41:04
+  neto: 1
+  total: 1
+  cliente_id: 1
+
+two:
+  folio: 
+  fecha_emision: 2012-06-12 01:41:04
+  neto: 1
+  total: 1
+  cliente_id: 1

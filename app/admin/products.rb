@@ -1,80 +1,77 @@
 ActiveAdmin.register Product do
-  # Hacer menu desplegable, holi es el nombre mostrado
-  # menu :parent =>  "Holi"
-  # Prioridad en el orden del menu
-  # menu :priority => 1
-  # Cambiar nombre de menu
-  # menu :label => "caca"
-  # :download_links => false para ocultar links en index  
-  # menu :label => "Productos" 
-  
- controller do
-    load_and_authorize_resource
-  end 
-  
- config.comments = false
- 
-	#Filtros
- filter :nombre
- filter :category
- filter :precio
- filter :real_stock
- 
-	# Productos por pagina en index
- before_filter :only => :index do
-   @per_page = 10
- end
- 
- scope :all, :default => true
-  # Pestaña con productos bajo stock 
- scope :critico do |products|
-    products.where("real_stock < minimum_stock")
- end 
-  
- form :html => { :enctype => "multipart/form-data" } do |f|
-   f.inputs "Product", :multipart => true do
-     f.input :nombre, :input_html => {:class => "input_mediano"}
+#  # Hacer menu desplegable, holi es el nombre mostrado
+#  # menu :parent =>  "Holi"
+#  # Prioridad en el orden del menu
+#  # menu :priority => 1
+#  # Cambiar nombre de menu
+#  # menu :label => "caca"
+#  # :download_links => false para ocultar links en index  
+#  # menu :label => "Productos" 
+#  
+# controller do
+#    load_and_authorize_resource
+#  end 
+#  
+# config.comments = false
+# 
+#	#Filtros
+# filter :descripcion
+# filter :category, :label => "Categoria"
+# filter :precio
+# filter :stock_real
+# 
+#	# Productos por pagina en index
+# before_filter :only => :index do
+#   @per_page = 10
+# end
+# 
+# scope :all, :default => true
+#  # Pestaña con productos bajo stock 
+# scope :critico do |products|
+#    products.where("stock_real < stock_minimo")
+# end 
+#  
+ form  do |f|
+   f.inputs "Product" do
+     f.input :codigo
+     f.input :descripcion, :input_html => {:rows => 10, :cols => 5}
      f.input :precio, :input_html => {:class => "input_mediano"}
-     f.input :costo_venta, :input_html => {:class => "input_mediano"}
-     f.input :maximum_stock, :label => "Stock Maximo", :input_html => {:class => "input_mediano"}
-     f.input :minimum_stock , :label => "Stock Minimo", :input_html => {:class => "input_mediano"}
-     f.input :category, :label => "Categoria"
-     f.input :descripcion, :input_html => {:rows => 10, :cols => 5} 
-     f.input :image, :as => :file, :hint =>  f.object.image? ? f.template.image_tag(f.object.image.url(:thumb)) : f.template.content_tag(:span, "Imagen Opcional")
+     f.input :costo, :input_html => {:class => "input_mediano"}
+     f.input :stock_maximo, :label => "Stock Maximo", :input_html => {:class => "input_mediano"}
+     f.input :stock_minimo , :label => "Stock Minimo", :input_html => {:class => "input_mediano"}
+     f.input :category, :label => "Categoria"     
      end
-        f.buttons
-    end
-    
-#  sidebar :stats, :only => :show do
-#  	 product = Product.find(params[:id])
-#     render :partial => 'graph'		 
-#  end
+   f.buttons
+ end
+#    
+##  sidebar :stats, :only => :show do
+##  	 product = Product.find(params[:id])
+##     render :partial => 'graph'		 
+##  end
 
    index :download_links => false do
     selectable_column
-    column :nombre do |product|
-      link_to product.nombre, [:admin, product]
+    column :descripcion do |product|
+      link_to product.descripcion, [:admin, product]
     end
     column :precio, :sortable => :precio do |product|
       div :class => "precio" do
         number_to_currency product.precio, :locale => "es-Cl", :precision => 0, :delimiter => ".", :separator => ","
       end  
     end
-    column :real_stock     
+    column :stock_real     
     default_actions
   end
 
-  show :title => :nombre do |product|  	
+  show :title => :descripcion do |product|  	
     attributes_table do
-        row :nombre
-        row :precio
-        row :real_stock do
-          b product.real_stock
-        end
         row :descripcion
-        row :image do
-        	image_tag(product.image.url(:medium))
+        row :precio
+        row :stock_real do
+          b product.stock_real
         end
+        row :stock_maximo
+        row :stock_minimo
     end         
   end
 

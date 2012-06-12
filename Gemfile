@@ -11,6 +11,7 @@ group :development, :test do
   gem 'mysql2'
 end
 
+gem 'turn'
 #gem "ckeditor", "3.7.0.rc3"
 gem 'sass-rails',   '~> 3.2.3'
 #gem 'tlsmail'

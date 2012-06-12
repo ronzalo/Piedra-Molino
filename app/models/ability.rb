@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     user ||= AdminUser.new       
-    case user.role      
+    case user.rol      
       when "admin"
         can :manage, :all
       when "venta"

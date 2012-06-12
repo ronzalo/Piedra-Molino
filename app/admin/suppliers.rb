@@ -1,6 +1,10 @@
 ActiveAdmin.register Supplier do
   
 #  batch_action :destroy, true
+
+  action_item only:[:show] do
+    link_to('Nuevo Proveedor', new_admin_supplier_path)
+  end
   
   form do |f|  
   f.inputs "Proveedor" do
@@ -10,14 +14,13 @@ ActiveAdmin.register Supplier do
     f.input :razon_social
     f.input :giro
     f.input :telefono
-    f.input :representante
-    f.input :contacto, :hint => 'Telefono del representante'
+    f.input :contacto
     
     end
     f.buttons
   end
   
-  index do
+  index :download_links => false do
     selectable_column
     column :id
     column :nombre 

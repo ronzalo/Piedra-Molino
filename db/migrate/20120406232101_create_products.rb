@@ -1,15 +1,15 @@
 class CreateProducts < ActiveRecord::Migration
   def change
-    create_table :products do |t|
-      t.string :nombre, :null => true
+    create_table :productos do |t|
+      t.string :codigo
       t.text :descripcion
       t.integer :precio, :null => true
-      t.integer :costo_venta
-      t.integer :family_id
-      t.string :codigo
-      t.string :codigo_barra
-      t.string :ubicacion
-     
+      t.integer :costo
+      t.integer :categoria_id
+      t.integer :stock_real
+      t.integer :stock_minimo
+      t.integer :stock_maximo
+      
       t.timestamps
     end
   end

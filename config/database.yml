@@ -23,7 +23,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: project_development
+  database: proyecto_development
   pool: 5
   username: root
   password: '123456'
@@ -36,7 +36,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: project_test
+  database: proyecto_test
   pool: 5
   username: root
   password: '123456'
@@ -46,7 +46,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: project_production
+  database: proyecto_production
   pool: 5
   username: root
   password: '123456'

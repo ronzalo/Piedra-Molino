@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rut: MyString
+  razon_social: MyString
+  giro: MyString
+  nombre: MyString
+  direccion: MyString
+  comuna: MyString
+  ciudad: MyString
+  telefono: MyString
+
+two:
+  rut: MyString
+  razon_social: MyString
+  giro: MyString
+  nombre: MyString
+  direccion: MyString
+  comuna: MyString
+  ciudad: MyString
+  telefono: MyString

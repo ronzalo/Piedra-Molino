@@ -1,10 +1,11 @@
 ActiveAdmin.register GuiaDespacho do
 
+#  Items por paginas  
   before_filter :only => :index do
-   @per_page = 5
+   @per_page = 10
   end
 
-
+#  Formulario al crear o editar
   form do |f|
     f.inputs "Guia de Despacho" do
       f.input :client_id, :label => "Cliente", :as => :select, :collection => Client.all

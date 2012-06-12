@@ -5,7 +5,7 @@ ActiveAdmin.register Category do
     link_to('Nueva Categoria', new_admin_category_path)
   end 
  	 
-  filter :name
+  filter :nombre
   
 #  sidebar "Productos", :only => :show do
 #    table_for Product.where(:family_id => category.id) do
@@ -18,15 +18,14 @@ ActiveAdmin.register Category do
   form do |f|
   
   f.inputs "Categoria" do
-    f.input :name
+    f.input :nombre
   end
   f.inputs "Productos" do
     f.has_many :products do |p|
-      p.input :nombre
+      p.input :descripcion
       p.input :precio
-      p.input :real_stock
-      p.input :minimum_stock
-      p.input :maximum_stock
+      p.input :stock_minimo
+      p.input :stock_maximo
     end
   end
   
