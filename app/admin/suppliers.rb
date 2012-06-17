@@ -20,7 +20,7 @@ ActiveAdmin.register Supplier do
     end  
     f.actions
   end
-
+  
   index :download_links => false do
     selectable_column
   	column :rut
