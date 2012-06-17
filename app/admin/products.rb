@@ -14,22 +14,22 @@ ActiveAdmin.register Product do
 #  
 # config.comments = false
 # 
-#	#Filtros
-# filter :descripcion
-# filter :category, :label => "Categoria"
-# filter :precio
-# filter :stock_real
+  #Filtros
+filter :descripcion
+filter :category, :label => "Categoria"
+filter :precio
+filter :stock_real
 # 
-#	# Productos por pagina en index
-# before_filter :only => :index do
-#   @per_page = 10
-# end
+# # Productos por pagina en index
+before_filter :only => :index do
+  @per_page = 10
+end
 # 
-# scope :all, :default => true
-#  # Pestaña con productos bajo stock 
-# scope :critico do |products|
-#    products.where("stock_real < stock_minimo")
-# end 
+scope :all, :default => true
+ # Pestaña con productos bajo stock 
+scope :critico do |products|
+   products.where("stock_real < stock_minimo")
+end 
 #  
  form  do |f|
    f.inputs "Product" do
@@ -45,8 +45,8 @@ ActiveAdmin.register Product do
  end
 #    
 ##  sidebar :stats, :only => :show do
-##  	 product = Product.find(params[:id])
-##     render :partial => 'graph'		 
+##     product = Product.find(params[:id])
+##     render :partial => 'graph'    
 ##  end
 
    index :download_links => false do
@@ -63,7 +63,7 @@ ActiveAdmin.register Product do
     default_actions
   end
 
-  show :title => :descripcion do |product|  	
+  show :title => :descripcion do |product|    
     attributes_table do
         row :descripcion
         row :precio

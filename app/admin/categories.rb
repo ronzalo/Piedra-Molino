@@ -6,6 +6,12 @@ ActiveAdmin.register Category do
   end 
  	 
   filter :nombre
+
+  index do
+    selectable_column
+    column :nombre
+    default_actions
+  end
   
 #  sidebar "Productos", :only => :show do
 #    table_for Product.where(:family_id => category.id) do
@@ -15,14 +21,13 @@ ActiveAdmin.register Category do
 #    end
 #  end
   
-  form do |f|
-  
+  form do |f|  
   f.inputs "Categoria" do
     f.input :nombre
   end
   f.inputs "Productos" do
     f.has_many :products do |p|
-      p.input :descripcion
+      p.input :descripcion, :as => :string
       p.input :precio
       p.input :stock_minimo
       p.input :stock_maximo

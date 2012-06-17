@@ -22,9 +22,18 @@ es:
       admin_user:
         one: Usuario
         other: Usuarios
-      invoice:
-        one: Factura
-        other: Facturas  
+      sales_invoice:
+        one: "Factura de Venta"
+        other: "Facturas de Ventas"
+      sales_waybill:
+        one: "Guia de Venta"
+        other: "Guias de Ventas"
+      purchase_invoice:
+        one: "Factura de Compra"
+        other: "Facturas de Compras"
+      purchase_waybill:
+        one: "Guia de Compra"
+        other: "Guias de Compras"       
     attributes:
       category:
         name: Nombre

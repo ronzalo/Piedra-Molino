@@ -7,5 +7,6 @@ class AdminUser < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :rol, :password, :password_confirmation, :remember_me
+  validates :email, :rol, :presence => true
   
 end

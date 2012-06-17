@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  folio: 1
+  fecha_emision: 2012-06-12
+  total_venta: 1
+  proveedor_id: 1
+
+two:
+  folio: 1
+  fecha_emision: 2012-06-12
+  total_venta: 1
+  proveedor_id: 1

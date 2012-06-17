@@ -2,9 +2,8 @@
 
 one:
   rut: MyString
-  nombre: MyString
-  apellido: MyString
-  empresa: MyString
+  razon_social: MyString
+  giro: MyString
   direccion: MyString
   comuna: MyString
   ciudad: MyString
@@ -12,12 +11,12 @@ one:
   saldo: 1
   modo_pago: MyString
   credito_asignado: 1
+  contacto: MyString
 
 two:
   rut: MyString
-  nombre: MyString
-  apellido: MyString
-  empresa: MyString
+  razon_social: MyString
+  giro: MyString
   direccion: MyString
   comuna: MyString
   ciudad: MyString
@@ -25,3 +24,4 @@ two:
   saldo: 1
   modo_pago: MyString
   credito_asignado: 1
+  contacto: MyString

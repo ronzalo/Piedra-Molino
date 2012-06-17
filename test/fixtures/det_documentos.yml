@@ -4,16 +4,16 @@ one:
   cantidad: 1
   total: 1
   factura_compra_id: 1
-  guia_compra_id: 1
-  guia_venta_id: 1
   factura_venta_id: 1
+  guia_venta_id: 1
+  guia_compra_id: 1
   producto_id: 1
 
 two:
   cantidad: 1
   total: 1
   factura_compra_id: 1
-  guia_compra_id: 1
-  guia_venta_id: 1
   factura_venta_id: 1
+  guia_venta_id: 1
+  guia_compra_id: 1
   producto_id: 1
