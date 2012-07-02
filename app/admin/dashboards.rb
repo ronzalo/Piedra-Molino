@@ -20,7 +20,7 @@ ActiveAdmin::Dashboards.build do
   
   
   section "Productos con bajo stock" do
-    table_for Product.where('stock_real < stock_real') do |t|
+    table_for Product.where('stock_real < stock_minimo') do |t|
       column "Nombre", :descripcion do |product|
         link_to product.descripcion, [:admin, product], :class => "critico"
       end

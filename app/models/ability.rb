@@ -7,9 +7,9 @@ class Ability
       when "admin"
         can :manage, :all
       when "venta"
-        can :manage, [Client, Supplier, Product, Family, Category]  
+        can :manage, [Client, Supplier, Product, Category, SalesInvoice, SalesWaybill, PurchaseInvoice, PurchaseWaybill]  
       when "bodega"
-        can :read, [Product, Category, Family]  
+        can :read, [Product, Category]  
       end
   end 
 end

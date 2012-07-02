@@ -21,14 +21,10 @@ ActiveAdmin.register SalesInvoice do
   end
 
   show do |i|    
-    attributes_table do
+    attributes_table do 
         row :folio
         row :fecha_emision
-        row :neto do |sale_invoice|
-          sale_invoice.neto
-        end
-        row :total_venta 
-        row :client
+        row("Cliente") {|invoice| invoice.client}
     end         
   end
 
@@ -46,4 +42,17 @@ ActiveAdmin.register SalesInvoice do
     end
     default_actions
   end
+
+  sidebar "Items Facturados", :only => :show do
+    table_for DetDocumento.where(:factura_venta_id => sales_invoice.id).all do |t|
+      t.column("Cantidad") { |invoice| h3 invoice.cantidad }
+      t.column("Producto") { |invoice| h3 invoice.product.descripcion }
+    end
+  end
+  
+  sidebar "Total", :only => :show do
+    h1 number_to_currency(sales_invoice.total_venta, :locale => "es-Cl", :precision => 0, :delimiter => ".", :separator => ","), :style => "text-align: center; margin-top: 20px"
+  end
+
+
 end

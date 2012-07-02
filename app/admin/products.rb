@@ -24,7 +24,10 @@ filter :stock_real
 before_filter :only => :index do
   @per_page = 10
 end
-# 
+
+# Oculto el boton "Nuevo producto" ya que los productos nuevos se ingresan con las facturas
+actions :all, :except => [:new]
+
 scope :all, :default => true
  # Pestaña con productos bajo stock 
 scope :critico do |products|

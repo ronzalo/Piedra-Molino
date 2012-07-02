@@ -33,4 +33,16 @@ ActiveAdmin.register Client do
   	column :email
   	default_actions
   end
+
+  sidebar "Total Facturado", :only => :show do
+    h1 number_to_currency(SalesInvoice.where(:cliente_id => client.id).all.sum(&:total_venta), :locale => "es-Cl", :precision => 0, :delimiter => ".", :separator => ","), :style => "text-align: center; margin-top: 20px;"
+  end
+
+  sidebar "Ultimas Facturas", :only => :show do
+    table_for SalesInvoice.where(:cliente_id => client.id).order('created_at desc').limit(5).all do |t|
+      t.column("Folio") { |invoice| h3 invoice.id }
+      t.column("Total") { |invoice| number_to_currency invoice.total_venta, :locale => "es-Cl", :precision => 0, :delimiter => ".", :separator => "," }
+    end
+  end
+
 end

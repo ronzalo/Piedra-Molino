@@ -2,7 +2,7 @@ ActiveAdmin.register AdminUser do
 #  menu :if => proc{ can?(:manage, AdminUser) }     
 #  controller.authorize_resource  
 
-  index do
+  index :download_links => false do
     selectable_column
     column :email
     column :rol
@@ -16,7 +16,7 @@ ActiveAdmin.register AdminUser do
       f.input :password
       f.input :password_confirmation
     end
-    f.buttons
+    f.actions
   end
   
   show do |user|

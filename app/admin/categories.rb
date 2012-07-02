@@ -7,7 +7,7 @@ ActiveAdmin.register Category do
  	 
   filter :nombre
 
-  index do
+  index :download_links => false do
     selectable_column
     column :nombre
     default_actions
