@@ -9,16 +9,21 @@ ActiveAdmin::Dashboards.build do
     end
     strong { link_to "Ver todos los Productos", admin_products_path }
   end
-  
-  section "Ultimas Categorias" do
-     ul do
-         Category.all.collect do |category|
-           li link_to(category.nombre, admin_category_path(category))           
-         end
-     end        
+
+  section "Detalle Facturacion" do 
+    table do
+      tr do
+        td p "Facturacion de este mes"
+        td h3 number_to_currency(SalesInvoice.where('fecha_emision >= ?', Date.new(Time.now.year, Time.now.month, 1).to_datetime).all.sum(&:total_venta), :locale => "es-Cl", :precision => 0, :delimiter => ".", :separator => ",")
+      end
+
+      tr do
+        td p "Facturacion del mes pasado"
+        td h3 number_to_currency(SalesInvoice.where('fecha_emision >= ?', Time.now.prev_month).all.sum(&:total_venta), :locale => "es-Cl", :precision => 0, :delimiter => ".", :separator => ",")
+      end  
+    end  
   end
-  
-  
+
   section "Productos con bajo stock" do
     table_for Product.where('stock_real < stock_minimo') do |t|
       column "Nombre", :descripcion do |product|

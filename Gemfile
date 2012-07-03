@@ -13,6 +13,7 @@ group :development, :test do
 end
 
 gem 'turn'
+gem 'lazy_high_charts', '~> 1.1.5'
 #gem "ckeditor", "3.7.0.rc3"
 gem 'sass-rails',   '~> 3.2.3'
 #gem 'tlsmail'
