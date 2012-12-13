@@ -7,13 +7,5 @@ class DetDocumento < ActiveRecord::Base
   
   attr_accessible :producto_id, :cantidad, :total
 
-  after_save :total
-
-  def total
-    id_d = self.id
-    id_p = self.producto_id
-    sql = ActiveRecord::Base.connection();
-    sql.execute "call set_total_detalle(#{id_d}, #{id_p})";
-    sql.begin_db_transaction 
-  end
+  
 end
