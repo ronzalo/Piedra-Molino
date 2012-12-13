@@ -43,12 +43,6 @@ ActiveRecord::Schema.define(:version => 20120612203856) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "criticos", :id => false, :force => true do |t|
-    t.string  "codigo"
-    t.text    "nombre"
-    t.integer "deficit", :limit => 8
-  end
-
   create_table "det_documentos", :force => true do |t|
     t.integer  "cantidad"
     t.integer  "total"
@@ -152,11 +146,5 @@ ActiveRecord::Schema.define(:version => 20120612203856) do
 
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
   add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
-
-  create_table "utilidad", :id => false, :force => true do |t|
-    t.integer "precio"
-    t.integer "costo"
-    t.string  "utilidad", :limit => 20
-  end
 
 end
