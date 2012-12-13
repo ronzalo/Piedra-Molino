@@ -40,6 +40,7 @@ end
      f.input :descripcion, :input_html => {:rows => 10, :cols => 5}
      f.input :precio, :input_html => {:class => "input_mediano"}
      f.input :costo, :input_html => {:class => "input_mediano"}
+     f.input :stock_real, :label => "Stock", :input_html => {:class => "input_mediano"}
      f.input :stock_maximo, :label => "Stock Maximo", :input_html => {:class => "input_mediano"}
      f.input :stock_minimo , :label => "Stock Minimo", :input_html => {:class => "input_mediano"}
      f.input :category, :label => "Categoria"     
