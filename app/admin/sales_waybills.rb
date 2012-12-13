@@ -1,6 +1,5 @@
 ActiveAdmin.register SalesWaybill do
-  menu :parent => 'Guias'
-
+  menu false
   form do |f|
     f.inputs do
 

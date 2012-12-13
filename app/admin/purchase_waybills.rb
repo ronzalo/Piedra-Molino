@@ -1,4 +1,4 @@
 ActiveAdmin.register PurchaseWaybill do
-  menu :parent => 'Guias'
+  menu false
     
 end
