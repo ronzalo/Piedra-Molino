@@ -68,6 +68,7 @@ end
 
   show :title => :descripcion do |product|    
     attributes_table do
+        row :codigo
         row :descripcion
         row :precio
         row :stock_real do
